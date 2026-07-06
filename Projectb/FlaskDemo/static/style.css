@@ -1,0 +1,91 @@
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            background-color: #f4f6f9;
+        }
+         .container {
+            display: flex;                  /* Activates flexbox layout */
+  justify-content: space-between; /* Pushes items to the absolute edges */
+  align-items: center;            /* Optional: aligns them perfectly vertically */        
+        }
+        .item1 {
+           display: inline-block;
+  width: 30%;           
+  vertical-align: top;
+        }
+        .item2 {
+        display: inline-block;
+        width: 10%;        
+        padding-left:500px;
+        padding-top:20px;
+        
+        }
+    
+
+        .flex-container {
+            display: flex;
+            align-items: flex-start;
+            overflow-x: auto; /* Adds a scrollbar if your sheets are very wide */
+        }
+
+
+        .table-column-wrapper {
+            margin-right: 1.5em;
+            background: white;
+            padding: 15px;
+            padding-right: 20px;
+            border-radius: 6px;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+           white-space: nowrap;
+        }
+
+        .table-column-wrapper h3 {
+            margin-top: 0;
+            border-bottom: 2px solid #00704a;
+            padding-bottom: 10px;
+            color: #333;
+
+        }
+        .indexTab {
+            margin-right: 1.5em;
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+        }
+
+        table {
+            border-collapse: collapse;
+            font-size: 13px;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+         }
+         a {
+            padding-left: 5px;
+         }
+         .containerScores {
+            display:flex;
+
+         }
+         .scores {
+            flex: 1;
+            padding:10px;
+            padding-left: 50px;
+         }
+         .findStudent {
+            float: right;
+         }
+         .submitting {
+            float: right;
+         }

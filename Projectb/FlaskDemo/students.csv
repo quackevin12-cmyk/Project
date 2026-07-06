@@ -1,0 +1,29 @@
+Attempt ID,Q Title,Q Text,Bonus?,Difficulty,Answer,Answer Match,AI Score 1,AI Score 2,AI Score 3,Teacher Score 1,Teacher Score 2,Teacher Score 3
+1,q16 (code writing - if),Q Text,False,1,N/a,,,,,0.2,0.1,0.2
+2,q16 (code writing - if),"Complete the following code segment so that it will print the following messages depending on the value of the user input.
+
+ It will print ""yeah"" if the user input is even and is above 80.  It will print ""sure"" if the user input is odd and is between 50 and 80 (including 50 but not including 80). Otherwise, it will print ""not sure"".  System.out.println(""Enter an integer:""); int num = input.nextInt(); /* TODO: write the code in the box below to complete the task as describe   * (NO NEED TO WRITE THE WHOLE main method)   */",False,1,,,,,,,,
+3,q16 (code writing - if),"Complete the following code segment so that it will print the following messages depending on the value of the user input.
+
+ It will print ""yeah"" if the user input is even and is above 80.  It will print ""sure"" if the user input is odd and is between 50 and 80 (including 50 but not including 80). Otherwise, it will print ""not sure"".  System.out.println(""Enter an integer:""); int num = input.nextInt(); /* TODO: write the code in the box below to complete the task as describe   * (NO NEED TO WRITE THE WHOLE main method)   */",False,1,"if (num > 80 && num % 2 == 0) {<br>     System.out.println(""yeah"");<br> }<br> else if (num >= 50 && num < 80 && num % 2 == 1) {<br>     System.out.println(""sure"") }<br> else {<br>     System.out.println(""not sure"") }<br>",,,,,1.0,1.0,1.0
+4,q16 (code writing - if),"Complete the following code segment so that it will print the following messages depending on the value of the user input.
+
+ It will print ""yeah"" if the user input is even and is above 80.  It will print ""sure"" if the user input is odd and is between 50 and 80 (including 50 but not including 80). Otherwise, it will print ""not sure"".  System.out.println(""Enter an integer:""); int num = input.nextInt(); /* TODO: write the code in the box below to complete the task as describe   * (NO NEED TO WRITE THE WHOLE main method)   */",False,1,,,,,,,,
+5,q16 (code writing - if),"Complete the following code segment so that it will print the following messages depending on the value of the user input.
+
+ It will print ""yeah"" if the user input is even and is above 80.  It will print ""sure"" if the user input is odd and is between 50 and 80 (including 50 but not including 80). Otherwise, it will print ""not sure"".  System.out.println(""Enter an integer:""); int num = input.nextInt(); /* TODO: write the code in the box below to complete the task as describe   * (NO NEED TO WRITE THE WHOLE main method)   */",False,1,,,,,,,,
+6,q16 (code writing - if),"Complete the following code segment so that it will print the following messages depending on the value of the user input.
+
+ It will print ""yeah"" if the user input is even and is above 80.  It will print ""sure"" if the user input is odd and is between 50 and 80 (including 50 but not including 80). Otherwise, it will print ""not sure"".  System.out.println(""Enter an integer:""); int num = input.nextInt(); /* TODO: write the code in the box below to complete the task as describe   * (NO NEED TO WRITE THE WHOLE main method)   */",False,1,,,,,,,,
+7,q16 (code writing - if),"Complete the following code segment so that it will print the following messages depending on the value of the user input.
+
+ It will print ""yeah"" if the user input is even and is above 80.  It will print ""sure"" if the user input is odd and is between 50 and 80 (including 50 but not including 80). Otherwise, it will print ""not sure"".  System.out.println(""Enter an integer:""); int num = input.nextInt(); /* TODO: write the code in the box below to complete the task as describe   * (NO NEED TO WRITE THE WHOLE main method)   */",False,1,if{<br>,,,,,,,
+8,q16 (code writing - if),"Complete the following code segment so that it will print the following messages depending on the value of the user input.
+
+ It will print ""yeah"" if the user input is even and is above 80.  It will print ""sure"" if the user input is odd and is between 50 and 80 (including 50 but not including 80). Otherwise, it will print ""not sure"".  System.out.println(""Enter an integer:""); int num = input.nextInt(); /* TODO: write the code in the box below to complete the task as describe   * (NO NEED TO WRITE THE WHOLE main method)   */",False,1,input.nextInt(yeah=80) odd=50-80,,,,,,,
+9,q16 (code writing - if),"Complete the following code segment so that it will print the following messages depending on the value of the user input.
+
+ It will print ""yeah"" if the user input is even and is above 80.  It will print ""sure"" if the user input is odd and is between 50 and 80 (including 50 but not including 80). Otherwise, it will print ""not sure"".  System.out.println(""Enter an integer:""); int num = input.nextInt(); /* TODO: write the code in the box below to complete the task as describe   * (NO NEED TO WRITE THE WHOLE main method)   */",False,1,,,,,,,,
+10,q16 (code writing - if),"Complete the following code segment so that it will print the following messages depending on the value of the user input.
+
+ It will print ""yeah"" if the user input is even and is above 80.  It will print ""sure"" if the user input is odd and is between 50 and 80 (including 50 but not including 80). Otherwise, it will print ""not sure"".  System.out.println(""Enter an integer:""); int num = input.nextInt(); /* TODO: write the code in the box below to complete the task as describe   * (NO NEED TO WRITE THE WHOLE main method)   */",False,1,,,,,,,,

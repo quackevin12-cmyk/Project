@@ -1,0 +1,143 @@
+<html lang="en">
+<body>
+       <head>
+              <link rel="stylesheet" href="..\static\style.css">
+       </head>
+
+       {% if index > 0 %}
+<a href="/student/{{ index - 1 }}">Previous</a>
+{% endif %}
+
+&nbsp;&nbsp;&nbsp;
+
+    <a href="/">View All Students</a>
+    
+&nbsp;&nbsp;&nbsp;
+
+{% if index < total - 1 %}
+<a href="/student/{{ index + 1 }}">Next</a>
+{% endif %}
+
+<h2>Student {{ index + 1 }} of {{ total }}</h2>
+
+
+<div class="flex-container">
+       <div class="table-column-wrapper">
+            <h3>Question Types</h3>
+            {{ question_table | safe}}
+        </div>
+</div>
+
+<hr>
+
+
+    <div class="flex-container">
+        
+        <div class="table-column-wrapper">
+            <h3>Student Answer</h3>
+            {{student['Answer'] | safe}}
+        </div>
+
+        <div class="table-column-wrapper">
+            <h3>Rubric Criteria</h3>
+            {{ rubric_table | safe}}
+        </div>
+
+    </div>
+
+<div id="scoreCon" class="containerScores">
+ <div class="scores">
+<h3>AI Scores</h3>
+
+<p>Rubric 1: {{ student['Teacher Score 1'] | safe}}</p>
+<p>Rubric 2: {{ student['Teacher Score 2'] | safe}}</p>
+<p>Rubric 3: {{ student['Teacher Score 3'] | safe}}</p>
+
+
+ </div>
+
+ <div class="scores">
+       <h3>Teacher Scores</h3>
+<form method="POST">
+       <p>
+Rubric Item 1:
+<input type="number"
+       step="0.1"
+       min="0"
+       max="4.5"
+       name="Teacher Score 1"
+       value="{{ student['Teacher Score 1'] }}">
+</p>
+
+<p>
+Rubric Item 2:
+<input type="number"
+       step="0.1"
+       min="0"
+       max="4.5"
+       name="Teacher Score 2"
+       value="{{ student['Teacher Score 2'] }}">
+</p>
+
+<p>
+Rubric Item 3:
+<input type="number"
+       step="0.1"
+       min="0"
+       max="1"
+       name="Teacher Score 3"
+       value="{{ student['Teacher Score 3'] }}">
+</p>
+ 
+<button type="submit">
+    Save Scores
+</button>
+
+{% if message %}
+<p style="color:green;">
+    {{ message }}
+</p>
+{% endif %}
+</form>
+</div>
+</div>
+<br><br><br><br>
+
+       {% if index > 0 %}
+<a href="/student/{{ index - 1 }}">Previous</a>
+{% endif %}
+
+&nbsp;&nbsp;&nbsp;
+
+    <a href="/">View All Students</a>
+    
+&nbsp;&nbsp;&nbsp;
+
+{% if index < total - 1 %}
+<a href="/student/{{ index + 1 }}">Next</a>
+{% endif %}
+
+<div class="findStudent">
+Student
+
+<input
+    type="number"
+    id="studentIndex"
+    min="1"
+    max="{{ total }}"
+    value="{{ index + 1 }}"
+    style="width:60px;">
+
+<button type="button" onclick="goToStudent()">
+    Go
+</button>
+</div>
+<script>
+function goToStudent() {
+    const index = parseInt(document.getElementById("studentIndex").value) - 1;
+    window.location.href = "/student/" + index;
+}
+</script>
+
+</body>
+</html>

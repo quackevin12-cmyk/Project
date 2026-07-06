@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+    <link rel="stylesheet" href="..\static\style.css">
+</head>
+
+<div class="container">
+    <div class="item1">
+        <h2>Overview: All Students</h2>
+    </div>
+    <div class="item2">
+        <button type="button">Upload</button>
+    </div>
+</div>  
+<form method="POST">
+<table class="indexTab" border="1">
+
+<tr>
+    {% for col in students[0].keys() %}
+        {% if col != 'row_index' %}
+            <th>{{ col }}</th> 
+        {% endif %}
+    {% endfor %}
+</tr>
+
+
+{% for student in students %}
+<tr>
+
+<td>
+    <a href="/student/{{ student['row_index'] }}">
+        {{ student['Attempt ID'] }}
+    </a>
+</td>
+
+
+ <td>{{ student['Answer'] | safe}}</td> 
+
+
+<td>{{ student['AI Scores 1'] | safe}}</td>
+<td>{{ student['AI Scores 2'] | safe}}</td>
+<td>{{ student['AI Scores 3'] | safe}}</td>
+
+
+  
+<td>
+    <input type="number"
+           step="0.1"
+           min="0"
+           max="4"
+           name="Teacher Score 1 {{student ['row_index']}}"
+           value="{{ student['Teacher Score 1'] }}">
+</td>
+
+<td>
+    <input type="number"
+           step="0.1"
+           min="0"
+           max="4"
+           name="Teacher Score 2 {{student ['row_index']}}"
+           value="{{ student['Teacher Score 2'] }}">
+</td>
+
+<td>
+    <input type="number"
+           step="0.1"
+           min="0"
+           max="4"
+           name="Teacher Score 3 {{student ['row_index']}}"
+           value="{{ student['Teacher Score 3'] }}">
+</td>
+
+
+</tr>
+{% endfor %} 
+</table>
+<hr><br>
+<div class="submitting">
+<button type="submit">
+    Save All Teacher Scores
+</button>
+
+</form>
+
+{% if message %}
+<p style="color:green">
+    {{ message }}
+</p>
+{% endif %}
+</div>
+</body>
+</html>
