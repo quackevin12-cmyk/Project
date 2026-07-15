@@ -1,0 +1,11 @@
+Attempt ID,Answer,AI Score 1,AI Score 2,AI Score 3,Teacher Score 1,Teacher Score 2,Teacher Score 3
+1,N/a,,,,1.0,1.0,1.0
+2,,,,,0.9,1.0,1.0
+3,"if (num > 80 && num % 2 == 0) {<br>     System.out.println(""yeah"");<br> }<br> else if (num >= 50 && num < 80 && num % 2 == 1) {<br>     System.out.println(""sure"") }<br> else {<br>     System.out.println(""not sure"") }<br>",,,,,,
+4,,,,,,,
+5,,,,,,,
+6,,,,,,,
+7,if{<br>,,,,,,
+8,input.nextInt(yeah=80) odd=50-80,,,,,,
+9,,,,,,,
+10,,,,,,,

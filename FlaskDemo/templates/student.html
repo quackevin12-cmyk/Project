@@ -1,0 +1,132 @@
+<html lang="en">
+<body>
+       <head>
+              <link rel="stylesheet" href="..\static\style.css">
+       </head>
+
+       {% if index > 0 %}
+<a href="/student/{{ index - 1 }}">Previous</a>
+{% endif %}
+
+&nbsp;&nbsp;&nbsp;
+
+    <a href="/">View All Students</a>
+    
+&nbsp;&nbsp;&nbsp;
+
+{% if index < total - 1 %}
+<a href="/student/{{ index + 1 }}">Next</a>
+{% endif %}
+
+<h2>Student {{ index + 1 }} of {{ total }}</h2>
+
+
+<div class="flex-container">
+       <div class="table-column-wrapper">
+            <h3>Question Types</h3>
+            {{ question_table | safe}}
+        </div>
+</div>
+
+<hr>
+
+
+    <div class="flex-container">
+        
+        <div class="table-column-wrapper">
+            <h3>Student Answer</h3>
+            {{student['Answer'] | safe}}
+        </div>
+
+        <div class="table-column-wrapper">
+            <h3>Rubric Criteria</h3>
+            {{ rubric_table | safe}}
+        </div>
+
+    </div>
+
+<div id="scoreCon" class="containerScores">
+ <div class="scores">
+<h3>AI Scores</h3>
+{% for col_name in rubric_columns %}
+            <p>
+                <!-- Cleans up "Teacher Score 1" to display as "Rubric Item 1" on screen -->
+                {{ col_name.replace('Teacher Score', 'Rubric Item') }}: 
+                
+            </p>
+        {% endfor %}
+</div>
+
+ <div class="scores">
+       <h3>Teacher Scores</h3>
+<form method="POST">
+        {% for col_name in rubric_columns %}
+            <p>
+                <!-- Teacher score column displays as rubric -->
+                {{ col_name.replace('Teacher Score', 'Rubric Item') }}: 
+                
+                <input type="number" 
+                       step="0.1" 
+                       min="0" 
+                       {# max: Sets item 3 to max 1.0, everything else defaults to 4.5 #}
+                       max="{% if '3' in col_name %}1.1{% else %}4.5{% endif %}" 
+                       name="{{ col_name }}" 
+                       value="{{ student[col_name] or '' }}">
+            </p>
+        {% endfor %}
+
+<div class="submitting">
+<button type="submit">
+    Save All Scores
+</button>
+{% if message %}
+<br>
+<p style="color:green">
+    {{ message }}
+</p>
+{% endif %}
+</div>
+ </form>
+ </div>
+ </div>
+ 
+<br><br>
+
+       {% if index > 0 %}
+<a href="/student/{{ index - 1 }}">Previous</a>
+{% endif %}
+
+&nbsp;&nbsp;&nbsp;
+
+    <a href="/">View All Students</a>
+    
+&nbsp;&nbsp;&nbsp;
+
+{% if index < total - 1 %}
+<a href="/student/{{ index + 1 }}">Next</a>
+{% endif %}
+
+<div class="findStudent">
+Student
+
+<input
+    type="number"
+    id="studentIndex"
+    min="1"
+    max="{{ total }}"
+    value="{{ index + 1 }}"
+    style="width:60px;">
+
+<button class="go" type="button" onclick="goToStudent()">
+    Go
+</button>
+</div>
+<script>
+function goToStudent() {
+    const index = parseInt(document.getElementById("studentIndex").value) - 1;
+    window.location.href = "/student/" + index;
+}
+</script>
+
+</body>
+</html>

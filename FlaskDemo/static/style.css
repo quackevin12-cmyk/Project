@@ -1,0 +1,148 @@
+        body {
+            font-family: Tahoma, sans-serif;
+            margin: 30px;
+            background-color: #f4f6f9;
+        }
+         .container {
+            display: flex;                  
+        justify-content: space-between; 
+        align-items: center;               
+        }
+        .item1 {
+           display: inline-block;
+        width: 30%;           
+        vertical-align: top;
+        }
+        .item2 {
+        display: inline-block;
+        width: 10%;        
+        padding-left:500px;
+        padding-top:20px;
+        
+        }
+    
+        a:link {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .flex-container {
+            display: flex;
+            align-items: flex-start;
+            overflow-x: auto; 
+        }
+
+
+        .table-column-wrapper {
+            margin-right: 1.5em;
+            background: white;
+            padding: 15px;
+            padding-right: 20px;
+            border-radius: 6px;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+           white-space: nowrap;
+        }
+
+        .table-column-wrapper h3 {
+            margin-top: 0;
+            border-bottom: 2px solid #00704a;
+            padding-bottom: 10px;
+            color: #333;
+
+        }
+        .indexTab {
+            margin-right: 1.5em;
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+            overflow-y: auto;
+        }
+
+        table {
+            border-collapse: collapse;
+            font-size: 13px;
+            width: 100%;
+            overflow-y: auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            
+        }
+        tr:nth-child(even) {
+            background-color: #d3ebde;
+
+         }
+         tr {
+            background-color: #eaf5ef;
+         }
+         a {
+            padding-left: 5px;
+            
+         }
+         a:visited {
+            text-decoration: underline;
+         }
+         .containerScores {
+            display:flex;
+
+         }
+         .scores {
+            flex: 1;
+            padding:10px;
+            padding-left: 50px;
+         }
+         .findStudent {
+            float: right;
+            font-weight: bold;
+         }
+         .submitting {
+            float: right;
+            margin-left: auto;
+         }
+         button {
+              background-color: #00704a;
+            border: none;
+        color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 10px 24px;
+    border-radius: 10px;
+         }
+         .go {
+            font-size: 16px;
+            padding: 6px 16px;
+         }
+         .uploadBut1 {
+            border: none;
+            font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 10px 24px;
+    border-radius: 10px;
+         }
+         .uploadBut2 {
+        background-color: #00704a;
+            border: none;
+        color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 10px 24px;
+    border-radius: 10px;
+         }

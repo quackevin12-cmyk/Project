@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+    <link rel="stylesheet" href="..\static\style.css">
+</head>
+
+<div class="container">
+    <div class="item1">
+        <h2>Overview: All Students</h2>
+    </div>
+    <div class="item2">
+        <a href="/upload" style="display: inline-block; padding: 6px 12px; text-decoration: none;">
+        Upload
+    </a>
+    </div>
+</div>  
+<form method="POST">
+<table class="indexTab" border="1">
+
+<thead> 
+    <tr> 
+        <th>Attempt ID</th> 
+        {# Extract headers from the first student dictionary dynamically #}
+        {% for column in students[0].keys() %} 
+            {% if column not in ['row_index', 'Attempt ID'] and not column.startswith('AI Score') and column not in rubric_columns %} 
+                <th>{{ column }}</th> 
+            {% endif %} 
+        {% endfor %} 
+        
+        <!-- dynamic ai headers --> 
+        {% for i in range(1, rubric_columns|length + 1) %} 
+            <th>AI Score {{ i }}</th> 
+        {% endfor %} 
+        
+        <!-- dynamic teacher headers --> 
+        {% for col_name in rubric_columns %} 
+            <th>{{ col_name }}</th> 
+        {% endfor %} 
+    </tr> 
+</thead> 
+<tbody> 
+    {% for student in students %} 
+        <tr> 
+            <td> 
+                <a href="/student/{{ student['row_index'] }}"> 
+                    {{ student['Attempt ID'] }} 
+                </a> 
+            </td> 
+            
+            {% for key, value in student.items() %} 
+                {% if key not in ['row_index', 'Attempt ID'] and not key.startswith('AI Score') and key not in rubric_columns %} 
+                    <td>{{ value | safe }}</td> 
+                {% endif %} 
+            {% endfor %} 
+            
+            <!-- Dynamic AI Scores -->
+            {% for i in range(1, rubric_columns|length + 1) %} 
+                {# Checks both 'AI Score 1' and 'AI Scores 1' naming styles safely #}
+                <td>{{ student['AI Score ' ~ i] or student['AI Scores ' ~ i] or '' }}</td> 
+            {% endfor %} 
+            
+            <!-- Loops input fields depending on the amount of columns needed --> 
+            {% for col_name in rubric_columns %} 
+                <td> 
+                    <input type="number" step="0.1" min="0" max="4" name="{{ col_name }}_{{ student['row_index'] }}" value="{{ student[col_name] or '' }}"> 
+                </td> 
+            {% endfor %} 
+        </tr> 
+    {% endfor %} 
+</tbody>
+
+
+</table>
+<hr><br>
+<!--sybmitting scores-->
+<div class="submitting">
+<button type="submit">
+    Save All Teacher Scores
+</button>
+
+</form>
+
+{% if message %}
+<p style="color:green">
+    {{ message }}
+</p>
+{% endif %}
+</div>
+</body>
+</html>
